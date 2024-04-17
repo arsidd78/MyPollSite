@@ -1,0 +1,13 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block branding %}
+<nav><a href="{%url 'home' %}">Home</a> <a href="/admin">Admin</a></nav>
+<div id="site-name"><a href="{% url 'admin:index' %}">Poll Admin</a></div>
+{% if user.is_anonymous %}
+  {% include "admin/color_theme_toggle.html" %}
+{% endif %}
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

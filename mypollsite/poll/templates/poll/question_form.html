@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'poll/style_add_question.css'%}">
+</head>
+<body>
+    <nav><a href="{%url 'home' %}">HOME</a> <a href="/admin">ADMIN</a>{%if user.is_authenticated%}% <a href="{%url 'sign-out' %}">LOG OUT</a> </nav>{%else%}<nav><a href="{%url 'authenticate' %}">LOG IN</a> </nav>{%endif%}
+    <form method="post" enctype="multipart/form-data" >
+        {%csrf_token%}
+        {{form.as_p}}
+        <input type="submit" value="add" >
+    </form>
+
+</body>
+</html>

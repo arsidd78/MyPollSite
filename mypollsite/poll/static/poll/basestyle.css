@@ -1,0 +1,74 @@
+/* basestyle.css */
+
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #7b7d80; /* Slightly darker gray background */
+    color: #6b6969;
+    padding: 20px; /* Add padding for better spacing */
+}
+
+/* Navigation styles */
+nav {
+    background-color: #363636; /* Dark gray background */
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Legend styles */
+legend {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #d3cccc; /* Dark gray text */
+}
+
+/* Choice input styles */
+input[type="radio"] {
+    margin-right: 10px; /* Add margin to the right for proper spacing */
+}
+
+/* Choice label styles */
+label {
+    display: inline-block; /* Ensure labels and inputs are displayed inline */
+    margin-bottom: 10px; /* Add margin to the bottom for spacing */
+    margin-right: 10px; /* Add margin to the right for spacing */
+    color: #181a16;
+}
+
+/* Submit button styles */
+input[type="submit"] {
+    display: block;
+    width: auto; /* Set width to auto for better fit */
+    margin-top: 20px; /* Add margin to separate from choices */
+    background-color: #007bff; /* Blue button background */
+    color: #fff; /* White button text */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px; /* Adjust padding for better appearance */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

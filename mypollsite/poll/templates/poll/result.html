@@ -1,0 +1,16 @@
+<head>
+{% load static %}
+    <link rel="stylesheet" href="{%static 'poll/resultstyle.css' %}">
+</head>
+<body>
+    <nav><a href="{%url 'home' %}">HOME</a> <a href="/admin">ADMIN</a>{%if user.is_authenticated%} <a href="{%url 'sign-out' %}">LOG OUT</a> </nav>{%else%}<nav><a href="{%url 'authenticate' %}">LOG IN</a> </nav>{%endif%}
+    <h1>{{ question.question }}</h1>
+
+    <ul>
+    {% for choice in question.choices_set.all %}
+        <li>{{ choice.choices }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+    {% endfor %}
+    </ul>
+
+    <a href="{% url 'detail' question.id %}">Vote again?</a>
+</body>

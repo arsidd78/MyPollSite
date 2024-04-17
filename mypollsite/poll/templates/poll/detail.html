@@ -1,0 +1,17 @@
+{%load static%}
+<head>
+    <link rel="stylesheet" href="{% static 'poll/basestyle.css' %}">
+</head>
+<body>
+    <nav><a href="{%url 'home' %}">HOME</a> <a href="/admin">ADMIN</a>{%if user.is_authenticated%}<a href="{%url 'sign-out' %}">LOG OUT</a> </nav>{%else%}<nav><a href="{%url 'authenticate' %}">LOG IN</a> </nav>{%endif%}
+    <form action="{%url 'vote' pk=question.id %}" method="post">
+        {%csrf_token%}
+        <legend><h2>{{question.question}}</h2></legend>
+        {% for choice in question.choices_set.all %}
+            <input type="radio" name="choice" id="choice{{forloop.counter}}" value="{{choice.id}}">
+            <label for="choice{{forloop.counter}}">{{choice.choices}}</label>
+
+        {%endfor%}
+        <input type="submit" value="Vote">
+    </form>
+</body>
